@@ -15,19 +15,18 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 // Step 3
 // functionality goes in the middle => how do we want the app to behave
 function changeBGImage() {
-	debugger;
+	//debugger;
 	//theHeading.textContent = "Super Cool Drag and Drop Game";
 	// start with the object, and then change a property
 	// or run a method
 
-	let theNewSource = "images/backGround" + this.id + ".jpg";
-	console.log(theNewSource);
+	// let theNewSource = "images/backGround" + this.id + ".jpg";
+	// console.log(theNewSource);
 	
+	// theHeading.classList.add('orange-headline');
 
-	theHeading.classList.add('orange-headline');
+	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
 }
-
-
 
 
 // Step 2
