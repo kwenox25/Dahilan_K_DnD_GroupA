@@ -29,6 +29,8 @@ function changeBGImage() {
 	
 	// theHeading.classList.add('orange-headline');
 
+	// bux fix #2 should go here nd it's most 3 lines of JS code
+	
 	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
 }
 
@@ -42,6 +44,7 @@ function handleStartDrag() {
 function handleDragOver(e) {
 	e.preventDefault();
 	console.log('dragged over me');
+	//bug fix #1 should go here and it's most 3 lines of JS code
 	// this line is going to move the dragged piece from the left side of the board info whatever drop zone we choose. appendChild means "add element to the containter"
 	this.appendChild(draggedPiece);
 }
