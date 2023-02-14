@@ -1,41 +1,43 @@
-// Step 1
-// variables always go at the top
-// there are the connections that you're making to elements on the page
-// Use CSS selectors to make connections to elements with JavaScript
-
-// create a 1 to 1 connection with a variable
-//let theButton = document.querySelector("#buttonOne");
-
-// create a 1 to many connections with a variable
-
 let theButtons = document.querySelectorAll("#buttonHolder img"),
 	theHeading = document.querySelector("#headLine h1"),
-	puzzleBoard = document.querySelector(".puzzle-board");
+	puzzleBoard = document.querySelector(".puzzle-board"),
+	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
+	dropZones = document.querySelectorAll(".drop-zone"),
+	draggedPiece;
 
 // Step 3
-// functionality goes in the middle => how do we want the app to behave
 function changeBGImage() {
-	//debugger;
-	//theHeading.textContent = "Super Cool Drag and Drop Game";
-	// start with the object, and then change a property
-	// or run a method
-
-	// let theNewSource = "images/backGround" + this.id + ".jpg";
-	// console.log(theNewSource);
+	// bux fix #2 should go here nd it's most 3 lines of JS code
 	
-	// theHeading.classList.add('orange-headline');
-
 	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
+	puzzleBoard.innerHTML = '';
 }
 
+function handleStartDrag() {
+	console.log('Started dragging this piece:', this);
+	draggedPiece = this;
+}
 
+function handleDragOver(event) {
+	event.preventDefault();
+	
+	//bug fix #1 should go here and it's most 3 lines of JS code
+
+	if (this.children.length === 0) {
+		this.appendChild(draggedPiece);
+		console.log('dragged over me');
+	}
+}
+
+function handleDrop(e) {
+	e.preventDefault();
+	
+	console.log('dropped something on me');
+}
 // Step 2
-// event handling always go at the bottom => how do we want users to interact with our app
 
-// 1 to 1 event handling
-//theButtons.addEventListener("click", changeBGImage);
-
-// 1 to many event handling
-//add event handling to each button in the collection of buttons, one at a time
 theButtons.forEach(button => button.addEventListener ("click", changeBGImage));
-//puzzleBoard.addEventListener("click, ")
+puzzlePieces.forEach(piece => piece.addEventListener('dragstart', handleStartDrag));
+dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
+dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+
