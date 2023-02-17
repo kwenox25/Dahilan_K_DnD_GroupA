@@ -5,12 +5,16 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	dropZones = document.querySelectorAll(".drop-zone"),
 	draggedPiece;
 
-// Step 3
 function changeBGImage() {
-	// bux fix #2 should go here nd it's most 3 lines of JS code
 	
+	// Remove all dragged pieces from drop zones
+
 	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
-	puzzleBoard.innerHTML = '';
+	console.log('Starting new puzzle background', this);
+	
+	// Update puzzlePieces array to contain new puzzle pieces
+	puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
+	
 }
 
 function handleStartDrag() {
@@ -20,9 +24,7 @@ function handleStartDrag() {
 
 function handleDragOver(event) {
 	event.preventDefault();
-	
-	//bug fix #1 should go here and it's most 3 lines of JS code
-
+	// Fix Bug 2
 	if (this.children.length === 0) {
 		this.appendChild(draggedPiece);
 		console.log('dragged over me');
@@ -34,7 +36,6 @@ function handleDrop(e) {
 	
 	console.log('dropped something on me');
 }
-// Step 2
 
 theButtons.forEach(button => button.addEventListener ("click", changeBGImage));
 puzzlePieces.forEach(piece => piece.addEventListener('dragstart', handleStartDrag));
