@@ -3,9 +3,13 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll(".drop-zone"),
-	draggedPiece;
+	mainBoard = document.querySelector('.puzzle-pieces'),
+
+    draggedPiece = null;
+
 
 function changeBGImage() {
+<<<<<<< Updated upstream
 	
 	// Remove all dragged pieces from drop zones
 
@@ -15,6 +19,22 @@ function changeBGImage() {
 	// Update puzzlePieces array to contain new puzzle pieces
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
 	
+=======
+	// bux fix #2 should go here nd it's most 3 lines of JS code
+	dropZones.forEach(zone => {
+        while (zone.firstChild) {
+            zone.removeChild(zone.firstChild);
+        }
+    });
+
+    puzzlePieces.forEach(piece => {
+        piece.classList.remove("dropped");
+        mainBoard.appendChild(piece);
+    });
+
+	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
+
+>>>>>>> Stashed changes
 }
 
 function handleStartDrag() {
