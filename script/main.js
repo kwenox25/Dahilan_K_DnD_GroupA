@@ -9,18 +9,8 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 
 
 function changeBGImage() {
-<<<<<<< Updated upstream
-	
-	// Remove all dragged pieces from drop zones
-
-	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
-	console.log('Starting new puzzle background', this);
-	
-	// Update puzzlePieces array to contain new puzzle pieces
-	puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
-	
-=======
-	// bux fix #2 should go here nd it's most 3 lines of JS code
+		// Remove all dragged pieces from drop zones
+		// Fix Bug 2
 	dropZones.forEach(zone => {
         while (zone.firstChild) {
             zone.removeChild(zone.firstChild);
@@ -33,8 +23,6 @@ function changeBGImage() {
     });
 
 	puzzleBoard.style.backgroundImage = `url('images/backGround${this.id}.jpg')`;
-
->>>>>>> Stashed changes
 }
 
 function handleStartDrag() {
