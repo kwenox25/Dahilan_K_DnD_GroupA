@@ -25,8 +25,8 @@ function handleDragOver(event) {
 
 	if (this.children.length === 0) {
 		this.appendChild(draggedPiece);
-		console.log('dragged over me');
 	}
+	console.log('dragged over me');
 }
 
 function handleDrop(e) {
