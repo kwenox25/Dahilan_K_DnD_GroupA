@@ -1,6 +1,10 @@
-# Drag and Drop Reference
+# Drag and Drop Puzzle Game
 
-TODO: Write a project description
+Do you love challenges and puzzles? This is an amazing tile puzzle game where you drag and drop the tiles to make a full picture. 
+
+Use the mouse to click on the puzzle piece that you want to move. Hold your mouse button down, and move the puzzle piece to where you think it should go.
+
+After solving, click the images below to reset the game and find new background.
 
 ## Contributing
 
